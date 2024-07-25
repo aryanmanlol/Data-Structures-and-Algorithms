@@ -1,0 +1,58 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    
+int i,j,ele, loc, n, choice=1;
+int arr[100];
+
+cout<<"enter no. of elements: "; cin>>n;
+cout<<"enter elements: ";
+for (i=0;i<=n;i++)
+cin>>i;
+
+do{
+cout<<"enter your choice: 1 to insert, 2 to delete, 3 to display, 4 to exit: ";
+cin>>choice;
+
+switch(choice){
+    
+case 1:
+cout<<"enter element and location: ";
+cin>>ele;
+cin>>loc;
+
+for(i=n-1;i>=loc;i--)
+arr[i+1]=arr[i];
+
+n=n+1;
+arr[loc]=ele;
+cout<<"element is inserted";
+break;
+
+case 2:
+cout<<"enter location to delete element: ";
+cin>>loc;
+
+for(i=loc+1;i<n;i++)
+arr[i]=arr[i+1];
+
+n=n-1;
+cout<<"element has been deleted";
+break;
+
+case 3:
+cout<<"elements are:";
+for(j=0;j<n;j++)
+cout<<arr[j];
+break;
+
+case 4:
+cout<<"ending the program...";
+break;
+}
+}while(choice!=4);
+
+return 0;
+}
